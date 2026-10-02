@@ -6,6 +6,24 @@ import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const OVERSEAS_EXPERIENCE = [
+    {
+        company: 'US Company',
+        product: 'EHS Solution Apps',
+        duration: '2 Years',
+    },
+    {
+        company: 'Germany Company',
+        product: 'EHS Solution Apps',
+        duration: '2 Years',
+    },
+    {
+        company: 'Malaysia Company',
+        product: 'EHS Solution Apps',
+        duration: '2 Years',
+    },
+];
+
 const AboutMe = () => {
     const container = React.useRef<HTMLDivElement>(null);
 
@@ -52,42 +70,43 @@ const AboutMe = () => {
     );
 
     return (
-        <section className="pb-section" id="about-me">
+        <section className="pb-section pt-10" id="about-me">
             <div className="container" ref={container}>
-                <h2 className="text-4xl md:text-6xl font-thin mb-20 slide-up-and-fade">
-                    I believe in a user centered design approach, ensuring that
-                    every project I work on is tailored to meet the specific
-                    needs of its users.
-                </h2>
+                <div className="grid gap-10 md:grid-cols-4 md:gap-8">
+                    <p className="slide-up-and-fade text-xs sm:text-sm tracking-[0.12em] uppercase text-muted-foreground">
+                        [ _01. ] /Experiences Overseas
+                    </p>
 
-                <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
-                    This is me.
-                </p>
-
-                <div className="grid md:grid-cols-12 mt-9">
-                    <div className="md:col-span-5">
-                        <p className="text-5xl slide-up-and-fade">
-                            Hi, I&apos;m Tajmirul.
-                        </p>
-                    </div>
-                    <div className="md:col-span-7">
-                        <div className="text-lg text-muted-foreground max-w-[450px]">
-                            <p className="slide-up-and-fade">
-                                I&apos;m a frontend web developer dedicated to
-                                turning ideas into creative solutions. I
-                                specialize in creating seamless and intuitive
-                                user experiences.
+                    {OVERSEAS_EXPERIENCE.map((item) => (
+                        <div key={item.company} className="slide-up-and-fade">
+                            <h3 className="text-sm sm:text-base font-bold tracking-wide uppercase text-white">
+                                {item.company}
+                            </h3>
+                            <p className="mt-1.5 text-sm text-muted-foreground">
+                                {item.product}
                             </p>
-                            <p className="mt-3 slide-up-and-fade">
-                                My approach focuses on creating scalable,
-                                high-performing solutions tailored to both user
-                                needs and business objectives. By prioritizing
-                                performance, accessibility, and responsiveness,
-                                I strive to deliver experiences that not only
-                                engage users but also drive tangible results.
+                            <p className="mt-1 text-sm font-semibold text-white">
+                                {item.duration}
                             </p>
                         </div>
-                    </div>
+                    ))}
+                </div>
+
+                <div className="slide-up-and-fade mt-12 border-t border-white/20" />
+
+                <div className="slide-up-and-fade mt-16 md:mt-20 max-w-[920px] space-y-8 text-lg md:text-xl leading-relaxed text-white/90">
+                    <p>
+                        I&apos;m a 17 year-old passionate fullstack web
+                        developer dedicated to turning ideas into creative
+                        solutions. I specialize in creating seamless and
+                        intuitive user experiences.
+                    </p>
+                    <p>
+                        I&apos;m involved in every step of the process: from
+                        discovery and design to development, testing, and
+                        deployment. I focus on delivering high-quality,
+                        scalable results that drive positive user experiences.
+                    </p>
                 </div>
             </div>
         </section>

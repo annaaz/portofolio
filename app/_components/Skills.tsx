@@ -1,138 +1,97 @@
 'use client';
-import SectionTitle from '@/components/SectionTitle';
 import { MY_STACK } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const SKILLS = Object.values(MY_STACK).flat();
+
+const LAYOUT = [
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+];
 
 const Skills = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(
         () => {
-            const slideUpEl =
-                containerRef.current?.querySelectorAll('.slide-up');
+            const tiles = containerRef.current?.querySelectorAll('.skill-tile');
+            if (!tiles?.length) return;
 
-            if (!slideUpEl?.length) return;
-
-            const tl = gsap.timeline({
+            gsap.from(tiles, {
+                opacity: 0,
+                y: 24,
+                stagger: 0.04,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top 80%',
-                    end: 'bottom 80%',
+                    end: 'top 30%',
                     scrub: 0.5,
                 },
             });
-
-            tl.from('.slide-up', {
-                opacity: 0,
-                y: 40,
-                ease: 'none',
-                stagger: 0.4,
-            });
         },
         { scope: containerRef },
     );
 
-    useGSAP(
-        () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'bottom 50%',
-                    end: 'bottom 10%',
-                    scrub: 1,
-                },
-            });
-
-            tl.to(containerRef.current, {
-                y: -150,
-                opacity: 0,
-            });
-        },
-        { scope: containerRef },
-    );
+    let skillIndex = 0;
 
     return (
-        <section id="my-stack" ref={containerRef}>
-            <div className="container">
-                <SectionTitle title="My Stack" />
+        <section className="pb-section" id="my-stack" ref={containerRef}>
+            <div className="w-full max-w-[1250px] mx-auto px-6 lg:px-12">
+                <p className="mb-8 text-xs sm:text-sm tracking-[0.12em] uppercase text-muted-foreground">
+                    [ _02. ] /Tech Stack
+                </p>
 
-                <div className="space-y-20">
-                    {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
-                            <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
-                                </p>
-                            </div>
-
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
-                                {value.map((item) => (
+                <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-2 sm:gap-3">
+                    {LAYOUT.flatMap((row, rowIndex) =>
+                        row.map((filled, colIndex) => {
+                            if (!filled) {
+                                return (
                                     <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
-                                        key={item.name}
-                                    >
-                                        <div>
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.name}
-                                                width="40"
-                                                height="40"
-                                                className="max-h-10"
-                                            />
-                                        </div>
-                                        <span className="text-2xl capitalize">
-                                            {item.name}
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+                                        key={`empty-${rowIndex}-${colIndex}`}
+                                        className="hidden lg:block"
+                                    />
+                                );
+                            }
 
-    return (
-        <section id="my-stack" ref={containerRef}>
-            <div className="container">
-                <SectionTitle title="My Stack" />
+                            const skill = SKILLS[skillIndex];
+                            const number = skillIndex + 1;
+                            skillIndex += 1;
 
-                <div className="space-y-20">
-                    {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
-                            <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
-                                </p>
-                            </div>
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
-                                {value.map((item) => (
-                                    <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
-                                        key={item.name}
-                                    >
+                            if (!skill) return null;
+
+                            return (
+                                <div
+                                    key={skill.name}
+                                    className="skill-tile aspect-square bg-[#202020] p-2 sm:p-3 flex flex-col"
+                                >
+                                    <span className="text-[10px] leading-none text-white/80">
+                                        {number}
+                                    </span>
+                                    <div className="flex-1 flex items-center justify-center">
                                         <Image
-                                            src={item.icon}
-                                            alt={item.name}
-                                            width="40"
-                                            height="40"
-                                            className="h-10"
+                                            src={skill.icon}
+                                            alt={skill.name}
+                                            width={72}
+                                            height={72}
+                                            className="w-[55%] max-w-[72px] h-auto object-contain"
                                         />
-                                        <span className="text-2xl capitalize">
-                                            {item.name}
-                                        </span>
                                     </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+                                    <p className="text-[10px] sm:text-xs text-white/90 leading-tight truncate">
+                                        {skill.name}
+                                    </p>
+                                </div>
+                            );
+                        }),
+                    )}
                 </div>
             </div>
         </section>

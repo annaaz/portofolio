@@ -4,7 +4,7 @@ import { MY_EXPERIENCE } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -16,36 +16,54 @@ const Experiences = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 60%',
-                    end: 'bottom 50%',
-                    toggleActions: 'restart none none reverse',
-                    scrub: 1,
-                },
-            });
-
-            tl.from('.experience-item', {
-                y: 50,
-                opacity: 0,
-                stagger: 0.3,
-            });
-        },
-        { scope: containerRef },
-    );
-
-    useGSAP(
-        () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'bottom 50%',
+                    start: 'top 75%',
                     end: 'bottom 20%',
                     scrub: 1,
+                    toggleActions: 'play none none reverse',
                 },
             });
 
-            tl.to(containerRef.current, {
-                y: -150,
+            tl.from(
+                '.experience-line',
+                {
+                    scaleY: 0,
+                    opacity: 0,
+                    ease: 'power2.out',
+                    transformOrigin: 'top center',
+                },
+                0,
+            )
+                .from(
+                    '.experience-dot',
+                    {
+                        scale: 0.7,
+                        opacity: 0,
+                        stagger: 0.12,
+                        ease: 'power2.out',
+                    },
+                    0.1,
+                )
+                .from(
+                    '.experience-item',
+                    {
+                        y: 18,
+                        opacity: 0,
+                        stagger: 0.14,
+                        ease: 'power2.out',
+                    },
+                    0.08,
+                );
+
+            gsap.to(containerRef.current, {
+                y: -80,
                 opacity: 0,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'bottom 60%',
+                    end: 'bottom 15%',
+                    scrub: 1,
+                },
             });
         },
         { scope: containerRef },
@@ -54,22 +72,42 @@ const Experiences = () => {
     return (
         <section className="py-section" id="my-experience">
             <div className="container" ref={containerRef}>
-                <SectionTitle title="My Experience" />
+                <p className="mb-8 text-xs sm:text-sm tracking-[0.12em] uppercase text-muted-foreground">
+                    [ _03. ] /Experience
+                </p>
 
-                <div className="grid gap-14">
-                    {MY_EXPERIENCE.map((item) => (
-                        <div key={item.title} className="experience-item">
-                            <p className="text-xl text-muted-foreground">
-                                {item.company}
-                            </p>
-                            <p className="text-5xl font-anton leading-none mt-3.5 mb-2.5">
-                                {item.title}
-                            </p>
-                            <p className="text-lg text-muted-foreground">
-                                {item.duration}
-                            </p>
-                        </div>
-                    ))}
+                <div className="mx-auto">
+                    <div className="space-y-7 md:space-y-8">
+                        {MY_EXPERIENCE.map((item, index) => (
+                            <div
+                                key={item.title}
+                                className="experience-item border-b border-white/15 pb-4 last:border-b-0 last:pb-0"
+                            >
+                                <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                                    <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/60">
+                                        {item.company}
+                                    </p>
+                                    <p className="text-xs text-white/60">
+                                        {item.duration}
+                                    </p>
+                                </div>
+
+                                <p className="slide-up-and-fade mt-6 text-xl sm:text-base font-bold tracking-wide uppercase text-white">
+                                    {item.title}
+                                </p>
+                                <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/60">
+                                    {item.company}
+                                </p>
+
+                                <p className="mt-2 text-sm text-white/70 md:text-base">
+                                    {index % 2 === 0
+                                        ? 'Led frontend execution, shaped clean interfaces, and collaborated closely with teams to ship user-focused digital products.'
+                                        : 'Improved product quality, refined experiences, and translated business goals into smooth, responsive UI systems.'}
+                                </p>
+
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

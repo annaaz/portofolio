@@ -8,6 +8,7 @@ export const GENERAL_INFO = {
 
     oldPortfolio: 'https://www.legacy.me.toinfinite.dev',
     upworkProfile: 'https://www.upwork.com/freelancers/tajmirul',
+    resume: 'https://www.linkedin.com/in/tajmirul',
 };
 
 export const SOCIAL_LINKS = [
@@ -85,7 +86,7 @@ export const MY_STACK = {
         },
         {
             name: 'MongoDB',
-            icon: '/logo/mongodb.svg',
+            icon: '/logo/postgreSQL.png',
         },
         {
             name: 'Prisma',

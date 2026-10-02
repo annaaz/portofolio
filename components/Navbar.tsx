@@ -39,26 +39,33 @@ const Navbar = () => {
         <>
             <div className="sticky top-0 z-[4]">
                 <button
+                    aria-label="Toggle menu"
                     className={cn(
-                        'group size-12 absolute top-5 right-5 md:right-10 z-[2]',
+                        'group size-12 absolute top-5 right-5 md:right-10 z-[2] border border-foreground/70',
                     )}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <span
                         className={cn(
-                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px] ',
+                            'inline-block w-5 h-0.5 bg-foreground absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[7px]',
                             {
-                                'rotate-45 -translate-y-1/2': isMenuOpen,
-                                'md:group-hover:rotate-12': !isMenuOpen,
+                                'rotate-45 translate-y-0': isMenuOpen,
                             },
                         )}
                     ></span>
                     <span
                         className={cn(
-                            'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px] ',
+                            'inline-block w-5 h-0.5 bg-foreground absolute left-1/2 -translate-x-1/2 top-1/2 duration-300',
                             {
-                                '-rotate-45 -translate-y-1/2': isMenuOpen,
-                                'md:group-hover:-rotate-12': !isMenuOpen,
+                                'opacity-0': isMenuOpen,
+                            },
+                        )}
+                    ></span>
+                    <span
+                        className={cn(
+                            'inline-block w-5 h-0.5 bg-foreground absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[7px]',
+                            {
+                                '-rotate-45 translate-y-0': isMenuOpen,
                             },
                         )}
                     ></span>
