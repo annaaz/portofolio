@@ -64,7 +64,7 @@ const Banner = () => {
                     <p className="banner-description slide-up-and-fade mt-4 text-base sm:text-lg text-muted-foreground max-w-[480px]">
                         Hi! I am{' '}
                         <span className="font-semibold text-white">
-                            Tajmirul
+                            Annaafi
                         </span>
                         . An experienced Fullstack Web Developer based in
                         Bangladesh. With over 2+ years of experience, I help
