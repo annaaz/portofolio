@@ -45,7 +45,7 @@ const Banner = () => {
                     <div className="slide-up-and-fade flex items-center gap-2 mb-6">
                         <span className="size-3 bg-primary shrink-0" />
                         <span className="text-[10px] sm:text-xs tracking-[0.18em] uppercase bg-foreground/10 text-foreground px-2.5 py-1">
-                            Available for new opportunity
+                            Open to relocation
                         </span>
                     </div>
 
@@ -58,18 +58,18 @@ const Banner = () => {
                     </h1>
 
                     <p className="slide-up-and-fade mt-6 text-sm sm:text-base font-bold tracking-wide uppercase text-white">
-                        Senior Software Engineer - Fullstack Developer
+                        Senior Software Engineer — Full-Stack
                     </p>
 
                     <p className="banner-description slide-up-and-fade mt-4 text-base sm:text-lg text-muted-foreground max-w-[480px]">
                         Hi! I am{' '}
                         <span className="font-semibold text-white">
-                            Annaafi
+                            Annaas Annaafi
                         </span>
-                        . An experienced Fullstack Web Developer based in
-                        Bangladesh. With over 2+ years of experience, I help
-                        people to grow their business by providing powerful and
-                        modern Web solutions.
+                        . A senior full-stack engineer based in Jakarta,
+                        Indonesia, with 11 years of experience shipping
+                        production systems across healthcare, media streaming,
+                        broadcasting, and compliance.
                     </p>
 
                     <div className="slide-up-and-fade mt-8 flex flex-wrap items-center gap-3">
@@ -123,7 +123,7 @@ const Banner = () => {
                     <div className="absolute right-0 bottom-[12%] sm:static sm:mb-[12%] flex flex-col gap-5 text-right shrink-0">
                         <div className="slide-up-and-fade">
                             <h5 className="text-3xl sm:text-[40px] font-anton text-primary leading-none">
-                                3+
+                                11+
                             </h5>
                             <p className="text-xs sm:text-sm text-muted-foreground mt-1 whitespace-nowrap">
                                 Years of Experience
@@ -131,10 +131,10 @@ const Banner = () => {
                         </div>
                         <div className="slide-up-and-fade">
                             <h5 className="text-3xl sm:text-[40px] font-anton text-primary leading-none">
-                                80+
+                                5
                             </h5>
                             <p className="text-xs sm:text-sm text-muted-foreground mt-1 whitespace-nowrap">
-                                Completed Projects
+                                Companies Worldwide
                             </p>
                         </div>
                     </div>

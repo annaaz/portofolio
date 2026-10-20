@@ -77,9 +77,9 @@ const Experiences = () => {
 
                 <div className="mx-auto">
                     <div className="space-y-7 md:space-y-8">
-                        {MY_EXPERIENCE.map((item, index) => (
+                        {MY_EXPERIENCE.map((item) => (
                             <div
-                                key={item.title}
+                                key={`${item.company}-${item.duration}`}
                                 className="experience-item border-b border-white/15 pb-4 last:border-b-0 last:pb-0"
                             >
                                 <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
@@ -94,16 +94,10 @@ const Experiences = () => {
                                 <p className="slide-up-and-fade mt-6 text-xl sm:text-base font-bold tracking-wide uppercase text-white">
                                     {item.title}
                                 </p>
-                                <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/60">
-                                    {item.company}
-                                </p>
 
                                 <p className="mt-2 text-sm text-white/70 md:text-base">
-                                    {index % 2 === 0
-                                        ? 'Led frontend execution, shaped clean interfaces, and collaborated closely with teams to ship user-focused digital products.'
-                                        : 'Improved product quality, refined experiences, and translated business goals into smooth, responsive UI systems.'}
+                                    {item.description}
                                 </p>
-
                             </div>
                         ))}
                     </div>

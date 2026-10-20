@@ -29,8 +29,9 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    title: 'Portfolio - Annaas Annaafi',
-    description: 'Personal portfolio of Annaas Annaafi',
+    title: 'Annaas Annaafi — Senior Software Engineer',
+    description:
+        'Senior full-stack engineer with 11 years of experience in Node.js, React, TypeScript, Vue, and PostgreSQL. Based in Jakarta, Indonesia. Open to relocation.',
 };
 
 export default function RootLayout({
