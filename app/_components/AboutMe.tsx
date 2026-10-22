@@ -79,7 +79,7 @@ const AboutMe = () => {
 
                     {OVERSEAS_EXPERIENCE.map((item) => (
                         <div key={item.company} className="slide-up-and-fade">
-                            <h3 className="text-sm sm:text-base font-bold tracking-wide uppercase text-white">
+                            <h3 className="text-sm sm:text-base font-bold tracking-wide uppercase text-primary">
                                 {item.company}
                             </h3>
                             <p className="mt-1.5 text-sm text-muted-foreground">

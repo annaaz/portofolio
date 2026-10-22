@@ -83,7 +83,7 @@ const Experiences = () => {
                                 className="experience-item border-b border-white/15 pb-4 last:border-b-0 last:pb-0"
                             >
                                 <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                                    <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-white/60">
+                                    <p className="text-[13px] font-bold uppercase tracking-[0.10em] text-primary">
                                         {item.company}
                                     </p>
                                     <p className="text-xs text-white/60">
