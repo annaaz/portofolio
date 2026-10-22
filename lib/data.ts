@@ -114,27 +114,55 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
+        title: 'EHS — Contractor & Visitor Management',
+        slug: 'kpa-ehs',
+        year: 2026,
+        liveUrl: 'https://www.kpaehs.com',
+        description: `
+      EHS compliance software by KPA, trusted by 15,000+ automotive clients including 40 of the top 50 automotive groups.<br/><br/>
+      Key work:<br/>
+      <ul>
+        <li>Built contractor management features that automate contractor onboarding and track compliance in real time on a multi-tenant enterprise SaaS platform</li>
+        <li>Built visitor management features for on-site visitor registration and tracking across customer locations</li>
+      </ul>
+      `,
+        role: `
+      Senior Software Engineer at KPA, LLC<br/>
+      Full-stack delivery with Node.js, Express, TypeScript, Vue 3, and Tailwind CSS, including PostgreSQL (Drizzle ORM), Redis, Pinia, and Vue Query.
+      `,
+        techStack: [
+            'Node.js',
+            'Express',
+            'TypeScript',
+            'Vue 3',
+            'Tailwind CSS',
+            'PostgreSQL',
+            'Redis',
+            'Pinia',
+            'Vue Query',
+        ],
+        thumbnail: '/projects/thumbnail/kpa-ehs.png',
+        longThumbnail: '/projects/long/kpa-ehs.png',
+        images: ['/projects/images/kpa-ehs-1.png'],
+    },
+    {
         title: 'MySiloam App',
         slug: 'mysiloam-app',
         year: 2022,
+        liveUrl: 'https://mysiloam.siloamhospitals.com',
         description: `
-      Healthcare mobile experience for appointment booking, medical records, and billing, with real-time health analytics and prescription management.<br/><br/>
+      Healthcare mobile app for appointment booking, medical records, billing, and prescription management.<br/><br/>
       Key outcomes:<br/>
       <ul>
         <li>Cut API response times by 40% while scaling to support 5x more concurrent users</li>
-        <li>Cut chat latency by 50% with real-time state management</li>
-        <li>Improved code-quality scores by 30% and reduced vulnerabilities with SonarQube scanning</li>
+        <li>Cut chat latency by 50% by implementing real-time state management</li>
+        <li>Improved code-quality scores by 30% and reduced vulnerabilities by integrating SonarQube scanning</li>
         <li>Delivered real-time chat and video consultation with Next.js and the Agora SDK, improving efficiency by 45%</li>
       </ul>
       `,
         role: `
       Senior Software Engineer at Bithealth.co.id<br/>
-      <ul>
-        <li>Owned high-performance REST APIs with Express.js, Redis, and PostgreSQL</li>
-        <li>Built dynamic dashboards and a real-time doctor-chat application in Next.js and TypeScript</li>
-        <li>Drove code-quality practices: pre-commit linting, TDD, atomic design, and SOLID principles</li>
-        <li>Mentored a junior engineer through reviews and pairing</li>
-      </ul>
+      Owned high-performance REST APIs and real-time doctor-chat experiences with Express.js, Next.js, TypeScript, Redis, and PostgreSQL.
       `,
         techStack: [
             'Express.js',
@@ -145,48 +173,101 @@ export const PROJECTS: IProject[] = [
             'Agora Video',
             'PostgreSQL',
         ],
-        thumbnail: '/projects/thumbnail/mti-electronics.webp',
-        longThumbnail: '/projects/long/mti-electronics.webp',
-        images: [
-            '/projects/images/mti-electronics-1.webp',
-            '/projects/images/mti-electronics-2.webp',
-        ],
+        thumbnail: '/projects/thumbnail/mysiloam.jpg',
+        longThumbnail: '/projects/long/mysiloam.jpg',
+        images: ['/projects/images/mysiloam-1.jpg'],
     },
     {
-        title: 'F&B Operations Platform',
-        slug: 'fnb-operations-platform',
-        year: 2025,
+        title: 'Durioo+ App',
+        slug: 'durioo-plus-app',
+        year: 2022,
+        liveUrl: 'https://duriooplus.com',
         description: `
-      Full-stack platform for food & beverage operations, adding LLM-powered features to optimize cost of goods sold (HPP) and increase revenue per order.<br/><br/>
-      Key features:<br/>
+      Media streaming educational platform<br/><br/>
+      Key outcomes:<br/>
       <ul>
-        <li>Automated HPP costing: extract supplier invoices into validated JSON with LLM structured output, then recalculate per-menu cost and margin</li>
-        <li>Menu engineering (Star / Plowhorse / Puzzle / Dog) with margin alerts when ingredient prices rise</li>
-        <li>pgvector-based search for substitute ingredients and similar recipes</li>
-        <li>Basket analysis for bundling and guarded upsell recommendations, plus a read-only text-to-SQL ops copilot</li>
+        <li>Designed and implemented a spatial navigation system to handle complex remote-control (D-pad) inputs and focus-state management.</li>
+        <li>Delivered pixel-perfect, responsive 10-foot UI layouts with consistent visual quality across multiple TV models.</li>
+       
       </ul>
       `,
         role: `
-      Personal project — full-stack engineer<br/>
-      Designing and building the platform end-to-end, including LLM structured output, RAG/pgvector search, and human confirmation before any price change.
+      Senior Software Engineer at Durioo+.com<br/>
+      Owned high-performance REST APIs and real-time doctor-chat experiences with Express.js, Next.js, TypeScript, Redis, and PostgreSQL.
       `,
         techStack: [
-            'Node.js',
+            'Express.js',
+            'Next.js',
             'TypeScript',
+            'Redis Pub/Sub',
+            'Agora Chat',
+            'Agora Video',
             'PostgreSQL',
-            'pgvector',
+        ],
+        thumbnail: '/projects/thumbnail/durioo.png',
+        longThumbnail: '/projects/long/durioo.png',
+        images: ['/projects/images/durioo.png'],
+    },
+    {
+        title: 'RCTI+',
+        slug: 'rcti-plus',
+        year: 2020,
+        liveUrl: 'https://www.rctiplus.com',
+        description: `
+      Streaming platform for on-demand video, live TV, and exclusive content with recommendations and real-time analytics.<br/><br/>
+      Key work:<br/>
+      <ul>
+        <li>Rebuilt the news API and frontend section, improving performance by 30%</li>
+        <li>Introduced TypeScript to strengthen code-quality control</li>
+        <li>Implemented Atomic Design in Next.js for a more maintainable component architecture</li>
+      </ul>
+      `,
+        role: `
+      Software Engineer at MNC Digital — RCTI+ (MNC Group)<br/>
+      Rebuilt legacy surfaces with React, TypeScript, Next.js, and a more maintainable frontend architecture.
+      `,
+        techStack: [
+            'Express.js',
+            'Next.js',
+            'TypeScript',
             'Redis',
-            'LLM APIs',
-            'Zod',
-            'Python (pandas)',
+            'Laravel',
+            'PostgreSQL',
         ],
-        thumbnail: '/projects/thumbnail/epikcart.jpg',
-        longThumbnail: '/projects/long/epikcart.jpg',
-        images: [
-            '/projects/images/epikcart-1.png',
-            '/projects/images/epikcart-2.png',
-            '/projects/images/epikcart-3.png',
+        thumbnail: '/projects/thumbnail/rcti-plus.jpg',
+        longThumbnail: '/projects/long/rcti-plus.jpg',
+        images: ['/projects/images/rcti-plus-1.jpg'],
+    },
+    {
+        title: 'Radio.Cloud',
+        slug: 'radio-cloud',
+        year: 2018,
+        liveUrl: 'https://radio.cloud',
+        description: `
+      Digital radio operations platform for major German clients (BLR, NRJ, Antenne D), covering news dashboards, reference aggregation, and DAB+ playlist software.<br/><br/>
+      Key work:<br/>
+      <ul>
+        <li>Built third-party integrations and bridging services with Node.js/Express.js on top of a Laravel-based application</li>
+        <li>Integrated the Spotify and MusicBrainz APIs to automate audio and metadata retrieval, enrichment, and analysis</li>
+        <li>Optimized the FFmpeg-based audio pipeline, reducing ingestion time by 35% and improving storage efficiency by 25%</li>
+        <li>Designed a real-time metadata ingestion and handover system, supporting 99.9% audio transmission reliability</li>
+      </ul>
+      `,
+        role: `
+      Backend Developer at NEXTCAST GmbH<br/>
+      Built radio.cloud as a Laravel monolith with Node.js/Express services for news imports, service bridging, and audio operations.
+      `,
+        techStack: [
+            'Express.js',
+            'Redis',
+            'Laravel',
+            'PostgreSQL',
+            'WebSocket',
+            'FFmpeg',
         ],
+        thumbnail: '/projects/thumbnail/radio-cloud.jpg',
+        longThumbnail: '/projects/long/radio-cloud.jpg',
+        images: ['/projects/images/radio-cloud-1.jpg'],
     },
 ];
 
@@ -194,35 +275,35 @@ export const MY_EXPERIENCE = [
     {
         title: 'Senior Software Engineer',
         company: 'KPA, LLC — United States (Remote)',
-        duration: 'Sep 2023 – Present',
+        duration: 'Sep 2023 – Aug 2026 · 3 yrs 1 mo',
         description:
-            'Building a multi-tenant enterprise SaaS platform for safety/compliance operations with Node.js, TypeScript, Vue 3, and PostgreSQL. Shipping modular services across contractor management, audits, incidents, and reporting, with RBAC, SAML/OIDC, Redis, and AWS integrations.',
+            'Delivered a multi-tenant enterprise SaaS platform for safety/compliance operations with Node.js, TypeScript, Vue 3, and PostgreSQL. Shipped contractor management, tasks, and reporting across PostgreSQL, Redis, and MongoDB, with LaunchDarkly, Pinia, and Vue Query.',
     },
     {
         title: 'Senior Software Engineer',
         company: 'Duriooplus Sdn Bhd (TV Platform) — Malaysia',
-        duration: 'Sep 2022 – Sep 2023',
+        duration: 'Jul 2022 – Sep 2023 · 1 yr',
         description:
             'Engineered a Samsung Smart TV streaming app from scratch with Next.js and React. Solved Tizen OS build limits, implemented D-pad spatial navigation, and delivered pixel-perfect 10-foot UI across TV models.',
     },
     {
         title: 'Senior Software Engineer',
         company: 'Bithealth.co.id — Indonesia',
-        duration: 'Sep 2020 – Sep 2022',
+        duration: 'Aug 2020 – Jul 2022 · 2 yrs',
         description:
-            'Cut API response times by 40%, lifted engagement 30% with Next.js dashboards and real-time doctor chat, and reduced technical debt by 60%. Mentored a junior engineer while raising code quality with TDD and linting.',
+            'Improved API response times by 40% with Express.js, Redis, and PostgreSQL. Lifted engagement 30% with Next.js dashboards and real-time doctor chat, reduced production bugs 25%, and mentored a junior engineer.',
     },
     {
         title: 'Software Engineer',
         company: 'MNC Digital — RCTI+ (MNC Group) — Indonesia',
-        duration: 'Sep 2018 – Sep 2020',
+        duration: 'Sep 2018 – Aug 2020 · 2 yrs',
         description:
-            'Rebuilt a legacy system with React, TypeScript, Next.js, Redux, and Tailwind CSS. Cut response time by 30%, improved quality scores 25%, and reduced technical debt 40% with SonarQube and coding standards.',
+            'Rebuilt a legacy system with React, TypeScript, Next.js, Redux, and Tailwind CSS. Improved response time by 30%, raised quality scores 25%, and reduced technical debt 40% with SonarQube and coding standards.',
     },
     {
         title: 'Backend Developer',
         company: 'NEXTCAST GmbH — radio.cloud — Germany',
-        duration: 'Jan 2015 – Sep 2018',
+        duration: 'Jan 2015 – Sep 2018 · 3 yrs 8 mos',
         description:
             'Built radio.cloud on Laravel with Node.js/Express integrations for German radio clients. Improved newsroom efficiency 40%, sustained 99.9% DAB+ audio reliability, and cut audio-ingestion time 35% with FFmpeg and metadata APIs.',
     },

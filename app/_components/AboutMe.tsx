@@ -10,17 +10,17 @@ const OVERSEAS_EXPERIENCE = [
     {
         company: 'United States',
         product: 'KPA, LLC — Safety / Compliance SaaS',
-        duration: '3 yrs 1 mo',
+        duration: 'Sep 2023 – Aug 2026 · 3 yrs 1 mo',
     },
     {
         company: 'Germany',
         product: 'NEXTCAST GmbH — radio.cloud',
-        duration: '3 yrs 8 mo',
+        duration: 'Jan 2015 – Sep 2018 · 3 yrs 8 mo',
     },
     {
         company: 'Malaysia',
         product: 'Duriooplus — Samsung TV Platform',
-        duration: '1 yr',
+        duration: 'Jul 2022 – Sep 2023 · 1 yr',
     },
 ];
 
